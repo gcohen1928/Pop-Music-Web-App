@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billboard Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style type="text/css">
+    .tab {
+      text-indent: 40px;
+    }
+
+    h4 {
+      text-indent: 80px;
+      color: gray;
+      transition-duration: 300ms;
+    }
+
+    h4:hover {
+      color: #df4759
+    }
+
+    h3 {
+      color: gray;
+      transition-duration: 300ms;
+    }
+
+    h3:hover {
+      color: #df4759
+    }
+
+    body {
+      background-image: url(./src/bg.jpeg) !important;
+    }
+
+    /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+  </style>
+</head>
+
+<body class="d-flex flex-column vh-100 ">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Billboard_logo.svg/1280px-Billboard_logo.svg.png"
+          height="36" alt="...">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="">Restard Game and Show Instructions</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="container mt-5">
+    <div class="row">
+      <div class="card mb-5">
+        <div class="col-lg-10 offset-1">
+          <div class="row card-group mb-3">
+            <form id="main" class="row col-lg-12" action="#" onsubmit="return validateFormOnSubmit(this)">
+            </form>
+            <div class="row mt-5" id="instructions">
+              <h1>Welcome to the Billboard 100 Challenge!</h1>
+              <hr>
+              <br>
+              <h2>How to Play:</h2>
+              <span class="col-md-10 offset-1">
+                <h3>1. Press the play button on the buttom of your screen</h3>
+                <h3>2. 3 cards will appear with 3 random songs from the Billboard 100's list</h3>
+                <h3>3. Your goal is to guess which song is the most popular, least popular, and in between out of the
+                  three songs</h3>
+                <h3>4. When you think you have an answer type (ONLY type the number in quotes): </h3>
+                <h4>- "1" for the most popular</h4>
+                <h4>- "2" for middle popular</h4>
+                <h4>- "3" for least popular</h4>
+                <h3>5. After you typed your answers, press the submit button</h3>
+                <h3>6. The correct order will be shown, and you can play another round by pressing the Play Again button
+                </h3>
+                <h3>7. Keep track of your progress on the scoreboard at the button of your screen</h3>
+                <h3>8. Have fun!</h3>
+              </span>
+            </div>
+            <button disabled id="pressme" class="btn btn-danger d-block col-lg-10 mt-3 offset-1">Loading ... </button>
+
+          </div>
+          <div id='stats' class="card mb-3 mx-auto d-block" style="width: 50rem">
+            <div class="card-header">
+              Game Statistics:
+            </div>
+            <div class="card-body">
+              <p class="text-success">Songs Guessed Correct:
+                <span id="correct">0</span>
+              </p>
+              <p class="text-danger">Songs Guessed Wrong:
+                <span id="wrong">0</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer bg-light py-3 mt-auto">
+    <div class="container">
+      <span class="text-muted">&copy; Billboard 100 Game 2021</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+
+  <script>
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.validated-form')
+
+      // Loop over them and prevent submission
+      Array.from(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+  <script src="gameplay.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"></script>
+</body>
+
+</html>
