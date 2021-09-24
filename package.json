@@ -1,0 +1,28 @@
+{
+  "name": "change-coding-challenge-2021-gcohen1928",
+  "version": "1.0.0",
+  "description": "How to Run Program:",
+  "main": "gameplay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChangePlusPlusVandy/change-coding-challenge-2021-gcohen1928.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChangePlusPlusVandy/change-coding-challenge-2021-gcohen1928/issues"
+  },
+  "homepage": "https://github.com/ChangePlusPlusVandy/change-coding-challenge-2021-gcohen1928#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.1",
+    "node": "^16.9.1",
+    "nodemon": "^2.0.12"
+  }
+}
