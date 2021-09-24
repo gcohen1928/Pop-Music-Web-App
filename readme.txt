@@ -20,6 +20,7 @@ Reflection:
 
 I am recently trained in core web development (by Udemy lol),so this project gave me a good chance to test my node, DOM and Bootstrap skills. 
 I found creating server.js the easiest part of this project, but the hardest part for me was making a static, fully automated Javascript program to operate as the UI. 
-So, I learned so much about the DOM and you can see that gameplay.js is mostly concerned with manipulating the DOM for the game to function. 
+So, I learned so much about the DOM and you can see that gameplay.js is mostly concerned with manipulating the DOM for the game to function 
+and for Bootstrap styles to be applied to each element. 
 After completing this program, I discovered that this program could have been much much simpler by simply making two seperate HTML files, one for the
 instructions and one for the gameplay, but oh well. I worked pretty hard on this so I hope you enjoy it for what it is!
