@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 
 //Array element to store songs, artists and ranks
-let billboards = []
+let billboards 
 
 //Method to make a get req to billboards website
 //Parses through data with cheerio.js to find data
